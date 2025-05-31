@@ -3,7 +3,7 @@ from sqlalchemy.orm import DeclarativeBase
 
 
 # путь, куда будет сохранена БД
-DATABASE_URL = "sqlite+aiosqlite:///../db_app.db"
+DATABASE_URL = "sqlite+aiosqlite:///../../db_app.db"
 # создание движка
 engine = create_async_engine(DATABASE_URL)
 
