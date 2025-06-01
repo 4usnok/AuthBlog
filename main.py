@@ -1,21 +1,23 @@
 import sqlite3
 
-from src.services.registration import Registration
+from src.database.crud import ClassFromCrud
 
-def main():
-    # Подключение к базе
-    conn = sqlite3.connect('data/db_app.db')
-    cursor = conn.cursor()
+class_obj = ClassFromCrud()
+print(class_obj.add_to_db())
 
-    # Просмотреть содержимое таблицы accounts
-    cursor.execute("SELECT * FROM accounts;")
-    data = cursor.fetchall()
+input_select = input("Посмотреть содержимое БД?: ")
+if input_select.lower() == "Да".lower():
+    connection = sqlite3.connect('data/accounts.db')
+    cursor = connection.cursor()
+    # Выбираем всех пользователей
+    cursor.execute('SELECT * FROM accounts')
+    users = cursor.fetchall()
+
+    # Выводим результаты
+    for user in users:
+        print(user)
 
     # Закрываем соединение
-    cursor.close()
-    conn.close()
-    return Registration().work_reg(), "Данные accounts: " + str(data)
-
-
-if __name__ == "__main__":
-    print(main())
+    connection.close()
+elif input_select.lower() == "Нет".lower():
+    pass
