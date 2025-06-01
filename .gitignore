@@ -187,3 +187,4 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 .idea
+privat_main.py
