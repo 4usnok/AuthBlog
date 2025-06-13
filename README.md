@@ -7,7 +7,7 @@
 # Инструкция по установке и использованию разработанных функций
 1. Клонируйте репозиторий:
 ```
-git clone git@github.com:4usnok/DZ2_OOP.git
+git clone https://github.com/4usnok/AuthBlog.git
 ```
 2. Установите зависимости:
 ```
